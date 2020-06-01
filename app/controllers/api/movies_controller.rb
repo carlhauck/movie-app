@@ -1,13 +1,13 @@
 class Api::MoviesController < ApplicationController
   
-  def display_all_movies
+  def index
     @movies = Movie.all
-    render 'all_movies.json.jb'
+    render 'index.json.jb'
   end
 
-  def display_one_movie
-    @movie = Movie.first
-    render 'one_movie.json.jb'
+  def show
+    @movie = Movie.find(params[:id])
+    render 'show.json.jb'
   end
 
 end
