@@ -1,15 +1,5 @@
 class Api::ActorsController < ApplicationController
 
-  def display_random_actor
-    @actors = Actor.all
-    @ids = []
-    @actors.each do |actor|
-      @ids << actor.id
-    end
-    @actor = Actor.find(@ids.sample)
-    render "show.json.jb"
-  end
-
   def index
     @actors = Actor.all
     render "index.json.jb"
@@ -18,6 +8,32 @@ class Api::ActorsController < ApplicationController
   def show
     @actor = Actor.find(params[:id])
     render "show.json.jb"
+  end
+
+  def create
+    @actor = Actor.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      known_for: params[:known_for]
+    )
+    @actor.save
+    render "show.json.jb"
+  end
+ 
+  def update
+    @actor = Actor.find(params[:id])
+    @actor.update(
+      first_name: params[:first_name] || @actor.first_name,
+      last_name: params[:last_name] || @actor.last_name,
+      known_for: params[:known_for] || @actor.known_for
+    )
+    render "show.json.jb"
+  end
+
+  def destroy
+    @actor = Actor.find(params[:id])
+    @actor.destroy
+    render json: {message: "Actor deleted."}
   end
 
 end
