@@ -1,3 +1,30 @@
+Actor.create!([
+  {first_name: "Daniel", last_name: "Day-Lewis", known_for: "There Will Be Blood", gender: "male", age: 63, movie_id: 7},
+  {first_name: "Keanu", last_name: "Reeves", known_for: "The Matrix", gender: "male", age: 55, movie_id: 10},
+  {first_name: "Dante", last_name: "Braun", known_for: "Journey of the Thief", gender: "male", age: 42, movie_id: 8},
+  {first_name: "Hugh", last_name: "Jelefant", known_for: "Walks in the Jungle", gender: "male", age: 40, movie_id: 9},
+  {first_name: "Virgilio", last_name: "Ondricka", known_for: "Amulet of Dreams", gender: "male", age: 22, movie_id: 9},
+  {first_name: "Karyl", last_name: "Lang", known_for: "The Action Brain from the Black Lagoon", gender: "female", age: 22, movie_id: 10},
+  {first_name: "Lela", last_name: "Considine", known_for: "Electric World", gender: "female", age: 27, movie_id: 7},
+  {first_name: "Marietta", last_name: "Cronin", known_for: "Nuclear Jungle", gender: "female", age: 32, movie_id: 8},
+  {first_name: "Delphine", last_name: "Emmerich", known_for: "Curse of the Killer Friday", gender: "female", age: 19, movie_id: 9},
+  {first_name: "Iva", last_name: "Bailey", known_for: "When Marline Met Birgit", gender: "female", age: 42, movie_id: 10},
+  {first_name: "Alexandra", last_name: "Maggio", known_for: "Monster 2: Electric Boogaloo", gender: "female", age: 23, movie_id: 7},
+  {first_name: "Tajuana", last_name: "Rosenbaum", known_for: "Blue Monster 2: Son of Blue Monster", gender: "female", age: 26, movie_id: 8},
+  {first_name: "Barry", last_name: "Washington", known_for: "The Barron", gender: "male", age: 42, movie_id: 5}
+])
+Genre.create!([
+  {name: "thriller"},
+  {name: "drama"},
+  {name: "action"},
+  {name: "documentary"},
+  {name: "comedy"},
+  {name: "rom-com"},
+  {name: "mystery"},
+  {name: "horror"},
+  {name: "adventure"},
+  {name: "sci-fi"}
+])
 Movie.create!([
   {title: "The Shawshank Redemption", year: 1994, plot: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", director: "Hugh Jelefant", english: true},
   {title: "Eternal Sunshine of the Spotless Mind", year: 2004, plot: "When their relationship turns sour, a couple undergoes a medical procedure to have each other erased from their memories.", director: "Hugh Jelefant", english: true},
@@ -25,53 +52,26 @@ MovieGenre.create!([
   {genre_id: 1, movie_id: 7},
   {genre_id: 1, movie_id: 8},
   {genre_id: 2, movie_id: 13},
-  {genre_id: 2, movie_id: 18},
   {genre_id: 10, movie_id: 6},
   {genre_id: 3, movie_id: 4},
   {genre_id: 3, movie_id: 8},
-  {genre_id: 3, movie_id: 19},
   {genre_id: 4, movie_id: 11},
   {genre_id: 4, movie_id: 12},
-  {genre_id: 5, movie_id: 17},
   {genre_id: 6, movie_id: 9},
-  {genre_id: 6, movie_id: 19},
   {genre_id: 7, movie_id: 5},
   {genre_id: 7, movie_id: 7},
   {genre_id: 7, movie_id: 13},
-  {genre_id: 7, movie_id: 15},
   {genre_id: 8, movie_id: 5},
   {genre_id: 8, movie_id: 10},
-  {genre_id: 8, movie_id: 17},
-  {genre_id: 9, movie_id: 4}
+  {genre_id: 9, movie_id: 4},
+  {genre_id: 3, movie_id: 17},
+  {genre_id: 6, movie_id: 17},
+  {genre_id: 5, movie_id: 15},
+  {genre_id: 8, movie_id: 16},
+  {genre_id: 2, movie_id: 16},
+  {genre_id: 7, movie_id: 14}
 ])
 User.create!([
   {name: "Abi", email: "crabigail@gmail.com", password_digest: "$2a$12$yE5ZGqW0J7A0sphP6ZV1ouzJfV7zWrARcriYJ4msh9uj3dyg18xH6", admin: true},
   {name: "Carl", email: "carlh@gmail.com", password_digest: "$2a$12$4UW43/e29T.oDndp2512ouRP92IQYap/buKIN1QvNYnqmp85V0JHK", admin: false}
-])
-Actor.create!([
-  {first_name: "Daniel", last_name: "Day-Lewis", known_for: "There Will Be Blood", gender: "male", age: 63, movie_id: 7},
-  {first_name: "Keanu", last_name: "Reeves", known_for: "The Matrix", gender: "male", age: 55, movie_id: 10},
-  {first_name: "Dante", last_name: "Braun", known_for: "Journey of the Thief", gender: "male", age: 42, movie_id: 8},
-  {first_name: "Hugh", last_name: "Jelefant", known_for: "Walks in the Jungle", gender: "male", age: 40, movie_id: 9},
-  {first_name: "Virgilio", last_name: "Ondricka", known_for: "Amulet of Dreams", gender: "male", age: 22, movie_id: 9},
-  {first_name: "Karyl", last_name: "Lang", known_for: "The Action Brain from the Black Lagoon", gender: "female", age: 22, movie_id: 10},
-  {first_name: "Lela", last_name: "Considine", known_for: "Electric World", gender: "female", age: 27, movie_id: 7},
-  {first_name: "Marietta", last_name: "Cronin", known_for: "Nuclear Jungle", gender: "female", age: 32, movie_id: 8},
-  {first_name: "Delphine", last_name: "Emmerich", known_for: "Curse of the Killer Friday", gender: "female", age: 19, movie_id: 9},
-  {first_name: "Iva", last_name: "Bailey", known_for: "When Marline Met Birgit", gender: "female", age: 42, movie_id: 10},
-  {first_name: "Alexandra", last_name: "Maggio", known_for: "Monster 2: Electric Boogaloo", gender: "female", age: 23, movie_id: 7},
-  {first_name: "Tajuana", last_name: "Rosenbaum", known_for: "Blue Monster 2: Son of Blue Monster", gender: "female", age: 26, movie_id: 8},
-  {first_name: "Barry", last_name: "Washington", known_for: "The Barron", gender: "male", age: 42, movie_id: 5}
-])
-Genre.create!([
-  {name: "thriller"},
-  {name: "drama"},
-  {name: "action"},
-  {name: "documentary"},
-  {name: "comedy"},
-  {name: "rom-com"},
-  {name: "mystery"},
-  {name: "horror"},
-  {name: "adventure"},
-  {name: "sci-fi"}
 ])
