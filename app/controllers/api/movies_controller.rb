@@ -10,7 +10,7 @@ class Api::MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     # render 'show.json.jb'
-    render 'show.html.erb'
+    render 'show.json.jb'
   end
 
   def create
@@ -18,8 +18,7 @@ class Api::MoviesController < ApplicationController
       title: params[:title],
       year: params[:year],
       director: params[:director],
-      plot: params[:plot],
-      english: params[:english]
+      plot: params[:plot]
     )
     if @movie.save
       render 'show.json.jb'
